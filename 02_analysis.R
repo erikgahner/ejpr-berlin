@@ -1420,3 +1420,6 @@ ch_reg_eu4_ol <- polr(factor(eu4) ~ tr + male + age + edu + income + unemployed 
 ess_reg_eu5_ol <- polr(factor(eu5) ~ tr + male + age + edu + income + unemployed + lrscale, data = ess[ess$name == "Germany",], Hess=TRUE)
 
 stargazer(ch_reg_eu1_ol, ch_reg_eu2_ol, ch_reg_eu3_ol, ch_reg_eu4_ol, ess_reg_eu5_ol, type="text")
+
+# Create and save sessionInfo.txt
+writeLines(capture.output(sessionInfo()), "sessionInfo.txt")
